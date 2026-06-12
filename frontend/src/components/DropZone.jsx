@@ -44,7 +44,7 @@ export function DropZone({ onAnalyze, disabled }) {
           if (!disabled) pick(e.dataTransfer.files[0])
         }}
         className={[
-          'relative border-2 border-dashed rounded-2xl p-14 text-center transition-all duration-200 outline-none',
+          'relative border-2 border-dashed rounded-2xl p-8 sm:p-14 text-center transition-all duration-200 outline-none',
           disabled
             ? 'border-slate-700 opacity-40 cursor-not-allowed'
             : dragOver
