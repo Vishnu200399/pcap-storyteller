@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Stop-Job *)",
+      "PowerShell(& \"C:\\\\Program Files\\\\Wireshark\\\\tshark.exe\" --version 2>&1 | Select-Object -First 1)",
+      "Bash(node --input-type=module)",
+      "PowerShell(C:\\\\NETWORKING_AI\\\\start.ps1)",
+      "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"cd C:\\\\NETWORKING_AI\\\\backend; node src/index.js\")",
+      "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"cd C:\\\\NETWORKING_AI\\\\frontend; npx vite\")",
+      "PowerShell($proc = Get-NetTCPConnection -LocalPort 3001 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -First 1; if \\($proc\\) { Stop-Process -Id $proc -Force; Write-Host \"Killed PID $proc on :3001\" } else { Write-Host \"Nothing on :3001\" })"
+    ]
+  }
+}
