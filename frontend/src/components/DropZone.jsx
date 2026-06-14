@@ -59,7 +59,7 @@ export function DropZone({ onAnalyze, disabled }) {
           type="file"
           accept=".pcap,.pcapng,.cap"
           className="hidden"
-          onChange={e => pick(e.target.files[0])}
+          onChange={e => { if (e.target.files[0]) pick(e.target.files[0]) }}
           disabled={disabled}
         />
 
